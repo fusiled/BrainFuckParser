@@ -23,3 +23,10 @@ second element of the tuple).
 
 At the moment the Context is limited by a list of 10 elements initialized to zero. The idea is to lazily instanciate the list: just instanciate cells only if 
 they're needed.
+
+## TODO
+
+ - Pass a string to the created executable instead of using a hard-coded one
+ - Make the Context easily
+ - Rename the context in something more meaningful, (like World?)
+ - Implement input and output. At the moment they're just idle operations.

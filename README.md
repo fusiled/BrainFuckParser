@@ -21,12 +21,13 @@ implemented in the future.
 Context is defined with `type Context = (Int, [W8.Word8])`: the first element of the tuple is the pointer of the current element of the list (the 
 second element of the tuple).
 
+### Limitations
+
 At the moment the Context is limited by a list of 10 elements initialized to zero. The idea is to lazily instanciate the list: just instanciate cells only if 
-they're needed.
+they're needed. Getting from standard input is not supported. The string input must be passed before running the program.
 
 ## TODO
 
  - Pass a string to the created executable instead of using a hard-coded one
  - Make the Context easily
  - Rename the context in something more meaningful, (like World?)
- - Implement input and output. At the moment they're just idle operations.

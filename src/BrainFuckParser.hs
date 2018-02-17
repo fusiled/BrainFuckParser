@@ -1,4 +1,6 @@
-module BrainFuckParser where
+module BrainFuckParser
+( BrainFuckParser.parse
+) where
 
 import BrainFuckCommon
 
@@ -63,12 +65,12 @@ sub = do
 out :: Parser Stmt
 out = do
   reserved "."
-  return Sub
+  return Out
 
 inp :: Parser Stmt
 inp = do
   reserved ","
-  return Sub
+  return Inp
 
 parse :: String -> Stmt
 parse str =

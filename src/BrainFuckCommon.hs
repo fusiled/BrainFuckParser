@@ -1,5 +1,5 @@
 module BrainFuckCommon where
-
+-- export everything
 
 import Data.Word8 as W8
 
@@ -23,11 +23,18 @@ bindToList partial (f:fs) =
   let newPartial = partial >>= f
   in bindToList newPartial fs
 
+type Byte = W8.Word8
+
 -- the context used by the simulator
-type Context = (Int, [W8.Word8])
+data Context = Context { index :: Int         
+                       , tape  :: [W8.Word8]
+                       , inputString :: String
+                       , outputString :: String 
+                       } deriving (Show)
 
 emptyContext :: Context
-emptyContext = (0,replicate 10 0)
+emptyContext = Context {index=0, tape=replicate 10 0 , inputString="", outputString=""}
 
-index :: Context -> Int
-index (num, _) = num
+
+getContext :: String -> Context
+getContext passedInput = Context {index=0, tape=replicate 10 0 , inputString=passedInput, outputString=""}
